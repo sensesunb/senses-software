@@ -85,9 +85,8 @@ BITMAP* bitmap_readtable(BITMAP *bitmap, FILE *stream)
 {
 	int height = bitmap->height/4;
 	int width = bitmap->width/8;
-	int i = 0, j;
+	int j;
 
-	printf("\tdim: %d x %d\n", height, width);
 	bitmap->table = (char**) malloc(height * sizeof(char));
 	for (j = 0; j < height; ++j)
 	{
@@ -131,6 +130,7 @@ void bitmap_write(BITMAP* bm)
 	printf("  number of important colors: %d\n", bm->important_colors);
 }
 
+#define SHIT -1
 void bitmap_display(BITMAP* bm)
 {
 	int height = bm->height/4;
@@ -138,7 +138,7 @@ void bitmap_display(BITMAP* bm)
 	int i, j, k;
 	char pixel;
 
-	printf("--- # %d x %d \n", bm->height, bm->width);
+	printf("---\n");
 	for (j = height - 1; j >= 0; --j)
 	{
 		for (i = 0; i < width; ++i)
@@ -146,6 +146,7 @@ void bitmap_display(BITMAP* bm)
 			pixel = bm->table[j][i];
 			for (k = 0; k < 8; ++k)
 				printf("%c", ((pixel >> k) & 0x1)? '#' : ' ');
+			printf(".");
 		}
 		printf("|\n");
 	}
