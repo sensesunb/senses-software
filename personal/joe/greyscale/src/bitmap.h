@@ -2,7 +2,7 @@
 #define BITMAP_H
 #include <stdlib.h>
 #include <stdio.h>
-#include <toolbox.h>
+#include <algebra.h>
 
 typedef struct {
 	char *name;
