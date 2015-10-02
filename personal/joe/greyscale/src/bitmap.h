@@ -83,10 +83,11 @@ BITMAP *bitmap_readdib(BITMAP *bitmap, FILE *stream)
 
 BITMAP* bitmap_readtable(BITMAP *bitmap, FILE *stream)
 {
-	int height = bitmap->height/8;
+	int height = bitmap->height/4;
 	int width = bitmap->width/8;
-	int j;
+	int i = 0, j;
 
+	printf("\tdim: %d x %d\n", height, width);
 	bitmap->table = (char**) malloc(height * sizeof(char));
 	for (j = 0; j < height; ++j)
 	{
@@ -132,21 +133,19 @@ void bitmap_write(BITMAP* bm)
 
 void bitmap_display(BITMAP* bm)
 {
-	int height = bm->height/8;
+	int height = bm->height/4;
 	int width = bm->width/8;
 	int i, j, k;
 	char pixel;
 
-	printf("---\n");
-	for (j = 0; j < height; ++j)
+	printf("--- # %d x %d \n", bm->height, bm->width);
+	for (j = height - 1; j >= 0; --j)
 	{
 		for (i = 0; i < width; ++i)
 		{
 			pixel = bm->table[j][i];
 			for (k = 0; k < 8; ++k)
-			{
 				printf("%c", ((pixel >> k) & 0x1)? '#' : ' ');
-			}
 		}
 		printf("|\n");
 	}
