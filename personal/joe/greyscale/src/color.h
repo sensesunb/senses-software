@@ -26,14 +26,12 @@ COLOR *color_read(FILE *stream)
 	color->green = from_file[1];
 	color->blue = from_file[2];
 
-	printf("\t%d %d %d\n", color->red, color->green, color->blue);
-
 	return color;
 }
 
 bool color_is_white(COLOR *color)
 {
-	if (color->red > 200)
+	if (color->red > 200 && color->green > 200 && color->blue > 200)
 		return true;
 	else
 		return false;
