@@ -31,7 +31,7 @@ COLOR *color_read(FILE *stream)
 
 bool color_is_white(COLOR *color)
 {
-	if (color->red > 200 && color->green > 200 && color->blue > 200)
+	if (color->red > 220 && color->green > 220 && color->blue > 220)
 		return true;
 	else
 		return false;
