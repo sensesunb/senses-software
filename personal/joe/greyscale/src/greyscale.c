@@ -1,11 +1,10 @@
-#include "greyscale.h"
+#include <greyscale.h>
 
 int main(int argc, char *argv[]) {
 	GREYSCALE *greyscale = greyscale_load(argv[1]);
 
-	bitmap_write(bitmap);
-	bitmap_display(bitmap);
-	free(bitmap);
+	greyscale_display(greyscale);
+	free(greyscale);
 
 	return 0;
 }

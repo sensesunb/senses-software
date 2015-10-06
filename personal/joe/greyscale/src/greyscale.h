@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdbool.h>
-#include "color.h"
-#include "bitmap.h"
+#include <color.h>
+#include <bitmap.h>
 
 typedef struct {
 	int width;
@@ -33,27 +33,31 @@ GS* greyscale_from_bitmap(BITMAP *bm)
 		gs->table[j] = (bool*) malloc(gs->width * sizeof(bool));
 		for (i = 0; i < gs->width; ++i)
 		{
-			gs->table[j][i] = (color_is_white(bm->table[j][i]))? false : true;
+			/* pay attention to this convention! */
+			gs->table[j][i] = (color_is_white(&bm->table[j][i]))? false : true;
 		}
 	}
+
+	return gs;
 }
 
-GS* greyscale_load()
+GS* greyscale_load(char *path)
 {
-	
+	return greyscale_from_bitmap(bitmap_load(path));
 }
 
 void greyscale_display(GS* gs)
 {
 	int i, j;
 
-	for (j = gs->height - 1; j >= 0; --j)
+	printf("---\n");
+	for (j = 0; j < gs->height; ++j)
 	{
 		for (i = 0; i < gs->width; ++i)
 		{
 			printf("%c", (gs->table[j][i])? '#' : ' ');
 		}
-		printf("\n");
+		printf("|\n");
 	}
 }
 
