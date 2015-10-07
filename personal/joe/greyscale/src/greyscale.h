@@ -61,4 +61,45 @@ void greyscale_display(GS* gs)
 	}
 }
 
+int greyscale_compare_slots(int x, int y, GS *to_compare)
+{
+	int result = -1;
+	int bx = x-1;
+	int by = y-1;
+	int ex = x+1;
+	int ey = y+1;
+	int i, j;
+
+	if (bx < 0) bx++;
+	if (by < 0) by++;
+	if (ex == to_compare->width) ex--;
+	if (ey == to_compare->height) ey--;
+
+	for (i = bx; i <= ex && result <= 0; ++i)
+		for (j = by; j <= ey && result <= 0; ++j)
+			if (to_compare->table[i][j] == true)
+				result = 1;
+
+	return result;
+}
+
+float greyscale_compare(GS* template, GS *to_compare)
+{
+	float score = 0;
+	int no_points = 0;
+	int x, y;
+
+	if (template->height != to_compare->height || template->width != to_compare->width) {
+		return -1;
+	}
+
+	for (x = 0; x < 8; ++x)
+		for (y = 0; y < 8; ++y)
+			if (template->table[x][y] == true)
+				score += greyscale_compare_slots(x, y, to_compare),
+				++no_points;
+
+	return score/no_points;
+}
+
 #undef GS
