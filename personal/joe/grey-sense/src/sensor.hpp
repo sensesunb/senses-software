@@ -71,6 +71,7 @@ std::vector<int*> Sensor::find(BITMAP* image, Letter letter)
 			printf("%d %d: %.2f\n", y, x, result);
 
 			if (result > SIMILARITY) {
+				printf("\tfound!");
 				vec = (int*) malloc(2 * sizeof(int));
 				vec[0] = y;
 				vec[1] = x;

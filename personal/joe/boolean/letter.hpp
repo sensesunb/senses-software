@@ -16,6 +16,7 @@ private:
 
 public:
 	Letter(void);
+	~Letter(void);
 
 	void load(char, const char*);
 	void write();
@@ -32,6 +33,10 @@ public:
 
 Letter::Letter() {
 	side = SIZE;
+	return;
+}
+
+Letter::~Letter() {
 	return;
 }
 
