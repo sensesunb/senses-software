@@ -10,6 +10,7 @@ class Letter {
 private:
 	bool* process_line(const char*);
 	int compare_slots(int, int, Letter);
+	int side;
 	char id;
 	bool **pattern;
 
@@ -21,6 +22,7 @@ public:
 	float compare(Letter);
 
 	/* gets and sets */
+	int get_side();
 	bool get_pattern(int, int);
 	char get_id();
 	void set_id(char);
@@ -28,6 +30,7 @@ public:
 };
 
 Letter::Letter() {
+	side = SIZE;
 	return;
 }
 
@@ -109,6 +112,11 @@ float Letter::compare(Letter to_compare)
 	return score/no_points;
 }
 
+int Letter::get_side()
+{
+	return side;
+}
+
 bool Letter::get_pattern(int x, int y)
 {
 	return pattern[x][y];
@@ -129,4 +137,5 @@ void Letter::set_pattern(bool **new_pattern)
 	this->pattern = new_pattern;
 }
 
+#undef SIZE
 #endif

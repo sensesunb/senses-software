@@ -13,6 +13,7 @@ public:
 	Letter greyscale2letter(GREYSCALE*);
 	Comparator(void);
 	char identify(Letter, bool);
+	std::vector<Letter> get_templates(bool);
 };
 
 Letter Comparator::greyscale2letter(GREYSCALE *greyscale)
@@ -75,4 +76,9 @@ char Comparator::identify(Letter to_find, bool debug_me = false)
 	}
 
 	return templates[get_supremum(score)].get_id();
+}
+
+std::vector<Letter> Comparator::get_templates(bool debug_me = false)
+{
+	return templates;
 }
