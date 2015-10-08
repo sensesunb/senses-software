@@ -30,6 +30,6 @@ Letter Cropper::crop(BITMAP *bmp, int bx, int by, int ex, int ey)
 		}
 	}
 
-	cropped.set_pattern(table);
+	cropped.set_pattern(portion);
 	return cropped;
 }

@@ -1,9 +1,10 @@
 #pragma once
+#include <vector>
+#include <cstdio>
 #include <bitmap.h>
 #include <letter.hpp>
 #include <comparator.hpp>
 #include <cropper.hpp>
-#include <vector>
 #define SIMILARITY (0.618034)
 
 class Sensor {
@@ -29,7 +30,7 @@ Sensor::Sensor(void)
 	return;
 }
 
-std::vector<Letter> Sensor:get_templates()
+std::vector<Letter> Sensor::get_templates()
 {
 	return comparator.get_templates();
 }
@@ -55,14 +56,22 @@ std::vector<int*> Sensor::find(BITMAP* image, Letter letter)
 	int sx = 1;
 	int sy = 1;
 	int h = letter.get_side() + 1;
-	int vec[2];
+	int* vec;
+	float result;
+
+	printf("[%d %d] -> [%d %d] : [%d %d]\n", by, bx, ey, ex, sy, sx);
+	bitmap_display(image);
 
 	for (int y = by; y < ey; y += sy)
 	{
 		for (int x = bx; x < ex; x += sx)
 		{
 			portion = cropper.crop(image, x, y, x+h, y+h);
-			if (portion.compare(letter) > SIMILARITY) {
+			result = portion.compare(letter);
+			printf("%d %d: %.2f\n", y, x, result);
+
+			if (result > SIMILARITY) {
+				vec = (int*) malloc(2 * sizeof(int));
 				vec[0] = y;
 				vec[1] = x;
 				found.push_back(vec);

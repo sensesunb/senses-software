@@ -20,6 +20,7 @@ public:
 	void load(char, const char*);
 	void write();
 	float compare(Letter);
+	void clean();
 
 	/* gets and sets */
 	int get_side();
@@ -135,6 +136,11 @@ void Letter::set_id(char new_id)
 void Letter::set_pattern(bool **new_pattern)
 {
 	this->pattern = new_pattern;
+}
+
+void Letter::clean()
+{
+	free(pattern);
 }
 
 #undef SIZE
