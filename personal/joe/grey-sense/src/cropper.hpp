@@ -5,7 +5,7 @@
 class Cropper {
 public:
 	Cropper(void);
-	Letter crop(BITMAP*, int, int, int, int);
+	bool** crop(BITMAP*, int, int, int, int);
 };
 
 /* PRIVATE FUNCTIONS */
@@ -16,9 +16,8 @@ Cropper::Cropper(void)
 {
 	return;
 }
-Letter Cropper::crop(BITMAP *bmp, int bx, int by, int ex, int ey)
+bool** Cropper::crop(BITMAP *bmp, int bx, int by, int ex, int ey)
 {
-	Letter cropped;
 	bool **portion = (bool**) malloc((ey-by) * sizeof(bool*));
 
 	for (int y = 0; y < ey; ++y)
@@ -30,6 +29,5 @@ Letter Cropper::crop(BITMAP *bmp, int bx, int by, int ex, int ey)
 		}
 	}
 
-	cropped.set_pattern(portion);
-	return cropped;
+	return portion;
 }

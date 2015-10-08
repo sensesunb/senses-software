@@ -12,7 +12,7 @@ class Sensor {
 public:
 	Sensor(void);
 	std::vector<Letter> get_templates();
-	/* std::string sense(char*) */ // this functions will extract the fucking text
+	/* std::string sense(char*) */ // this function will extract the fucking text
 	std::vector<int*> find(BITMAP*, Letter);
 
 };
@@ -66,9 +66,9 @@ std::vector<int*> Sensor::find(BITMAP* image, Letter letter)
 	{
 		for (int x = bx; x < ex; x += sx)
 		{
-			portion = cropper.crop(image, x, y, x+h, y+h);
+			portion.set_pattern(cropper.crop(image, x, y, x+h, y+h));
 			result = portion.compare(letter);
-			printf("%d %d: %.2f\n", y, x, result);
+			printf("%d %d: %.2f", y, x, result);
 
 			if (result > SIMILARITY) {
 				printf("\tfound!");
@@ -77,6 +77,9 @@ std::vector<int*> Sensor::find(BITMAP* image, Letter letter)
 				vec[1] = x;
 				found.push_back(vec);
 			}
+
+			printf("\n");
+			portion.clean();
 		}
 	}
 
