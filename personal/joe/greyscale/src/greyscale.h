@@ -61,6 +61,7 @@ void greyscale_display(GS* gs)
 	}
 }
 
+/*
 int greyscale_compare_slots(int x, int y, GS *to_compare)
 {
 	int result = -1;
@@ -83,7 +84,7 @@ int greyscale_compare_slots(int x, int y, GS *to_compare)
 	return result;
 }
 
-float greyscale_compare(GS* template, GS *to_compare)
+float greyscale_compare(GS *template, GS *to_compare)
 {
 	float score = 0;
 	int no_points = 0;
@@ -101,5 +102,6 @@ float greyscale_compare(GS* template, GS *to_compare)
 
 	return score/no_points;
 }
+*/
 
 #undef GS

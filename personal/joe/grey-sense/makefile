@@ -1,2 +1,5 @@
 options = -lm -O3 -ansi -pipe -Wall
-addpath = -I"../boolean/src" -I"../greyscale/src"
+addpath = -I"../boolean" -I"../greyscale/src" -I"src"
+
+comparator: src/comparator.hpp src/comparator.cpp
+	g++ src/comparator.cpp -o comp $(options) $(addpath)
