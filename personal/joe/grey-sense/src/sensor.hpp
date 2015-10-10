@@ -51,16 +51,17 @@ std::vector<int*> Sensor::find(BITMAP* image, Letter letter)
 	std::vector<int*> found;
 	int bx = 0;
 	int by = 0;
-	int ex = image->height - letter.get_side();
-	int ey = image->width - letter.get_side();
+	int ex = image->width - letter.get_side();
+	int ey = image->height - letter.get_side();
 	int sx = 1;
 	int sy = 1;
-	int h = letter.get_side() + 1;
+	int h = letter.get_side()+1;
 	int* vec;
 	float result;
 
-	printf("[%d %d] -> [%d %d] : [%d %d]\n", by, bx, ey, ex, sy, sx);
-	bitmap_display(image);
+	// printf("--- # %c\n", letter.get_id());
+	// printf("[%d %d] -> [%d %d] : [%d %d]\n", by, bx, ey, ex, sy, sx);
+	// bitmap_display(image);
 
 	for (int y = by; y < ey; y += sy)
 	{
@@ -68,17 +69,17 @@ std::vector<int*> Sensor::find(BITMAP* image, Letter letter)
 		{
 			portion.set_pattern(cropper.crop(image, x, y, x+h, y+h));
 			result = portion.compare(letter);
-			printf("%d %d: %.2f", y, x, result);
+			// printf("%d %d: %.2f", y, x, result);
 
 			if (result > SIMILARITY) {
-				printf("\tfound!");
+				// printf("\tfound!");
 				vec = (int*) malloc(2 * sizeof(int));
 				vec[0] = y;
 				vec[1] = x;
 				found.push_back(vec);
 			}
 
-			printf("\n");
+			// printf("\n");
 			portion.clean();
 		}
 	}

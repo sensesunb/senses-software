@@ -146,6 +146,7 @@ void Letter::set_pattern(bool **new_pattern)
 void Letter::clean()
 {
 	free(pattern);
+	pattern = NULL;
 }
 
 #undef SIZE
