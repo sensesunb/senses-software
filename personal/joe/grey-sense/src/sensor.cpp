@@ -10,7 +10,7 @@ void show(Letter letter, std::vector<int*> found)
 
 	std::cout << letter.get_id() << ":\n";
 	for (it = found.begin(); it != found.end(); ++it)
-		std::cout << "- [" << (*it)[0] << ", " << (*it)[1] << "]\n";
+		std::cout << "- [" << (*it)[0] << ", " << (*it)[1] << "] @ " << (*it)[2] << "%\n";
 }
 
 int main(int argc, char *argv[]) {
@@ -20,6 +20,7 @@ int main(int argc, char *argv[]) {
 	std::vector<Letter>::iterator it;
 	std::vector<int*> found;
 
+	bitmap_display(bitmap);
 	for (it = templates.begin(); it != templates.end(); ++it)
 	{
 		found = sensor.find(bitmap, *it);

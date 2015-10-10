@@ -5,7 +5,7 @@
 #include <letter.hpp>
 #include <comparator.hpp>
 #include <cropper.hpp>
-#define SIMILARITY (0.618034)
+#define SIMILARITY (0.75)
 
 class Sensor {
 	Comparator comparator;
@@ -68,14 +68,15 @@ std::vector<int*> Sensor::find(BITMAP* image, Letter letter)
 		for (int x = bx; x < ex; x += sx)
 		{
 			portion.set_pattern(cropper.crop(image, x, y, x+h, y+h));
-			result = portion.compare(letter);
+			result = letter.compare(portion);
 			// printf("%d %d: %.2f", y, x, result);
 
 			if (result > SIMILARITY) {
 				// printf("\tfound!");
-				vec = (int*) malloc(2 * sizeof(int));
-				vec[0] = y;
-				vec[1] = x;
+				vec = (int*) malloc(5 * sizeof(int));
+				vec[0] = x;
+				vec[1] = y;
+				vec[2] = (int) 100 * result;
 				found.push_back(vec);
 			}
 

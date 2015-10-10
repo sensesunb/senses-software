@@ -7,7 +7,7 @@
 
 class Comparator {
 	void load_templates(bool);
-	int get_supremum(std::vector<float>);
+	unsigned int get_supremum(std::vector<float>);
 	std::vector<Letter> templates;
 public:
 	Letter greyscale2letter(GREYSCALE*);
@@ -25,12 +25,12 @@ Letter Comparator::greyscale2letter(GREYSCALE *greyscale)
 	return letter;
 }
 
-int Comparator::get_supremum(std::vector<float> vec)
+unsigned int Comparator::get_supremum(std::vector<float> vec)
 {
 	float max_score = 0;
-	int out = 0;
+	unsigned int out = 0;
 
-	for (int i = 0; i < vec.size(); ++i)
+	for (unsigned int i = 0; i < vec.size(); ++i)
 	{
 		if (vec[i] > max_score) {
 			max_score = vec[i];
@@ -69,7 +69,7 @@ char Comparator::identify(Letter to_find, bool debug_me = false)
 
 	if (debug_me == true) {
 		printf("---\n");
-		for (int i = 0; i < templates.size(); ++i)
+		for (unsigned int i = 0; i < templates.size(); ++i)
 		{
 			printf("%c: %.2f\n", templates[i].get_id(), score[i]);
 		}
