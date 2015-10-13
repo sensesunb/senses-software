@@ -1,7 +1,6 @@
 #include <iostream>
 #include <vector>
 #include <bitmap.h>
-#include <letter.hpp>
 #include <sensor.hpp>
 
 int main(int argc, char *argv[]) {
@@ -15,7 +14,6 @@ int main(int argc, char *argv[]) {
 	processing_font.load("templates/Processing");
 	bitmap = bitmap_load(argv[1]);
 
-	bitmap_display(bitmap);
 	for (char c = '0'; c <= '9'; c++)
 	{
 		std::cout << c;
