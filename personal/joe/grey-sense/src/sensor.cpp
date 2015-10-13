@@ -15,12 +15,14 @@ void show(Letter letter, std::vector<int*> found)
 
 int main(int argc, char *argv[]) {
 	Sensor sensor;
-	std::vector<Letter> templates = sensor.get_templates();
-	BITMAP *bitmap = bitmap_load(argv[1]);
+	std::vector<Letter> templates;
+	BITMAP *bitmap = NULL;
 	std::vector<Letter>::iterator it;
 	std::vector<int*> found;
 
-	bitmap_display(bitmap);
+	sensor.load("templates/std");
+	templates = sensor.get_templates();
+	bitmap = bitmap_load(argv[1]);
 	for (it = templates.begin(); it != templates.end(); ++it)
 	{
 		found = sensor.find(bitmap, *it);

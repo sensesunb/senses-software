@@ -5,13 +5,17 @@
 #include <letter.hpp>
 #include <comparator.hpp>
 #include <cropper.hpp>
-#define SIMILARITY (0.75)
+#define SIMILARITY (0.9)
 
 class Sensor {
+	std::string typeface;
 	Comparator comparator;
 public:
 	Sensor(void);
+	void load(std::string);
+	void display(void);
 	std::vector<Letter> get_templates();
+	Letter get_letter(char);
 	/* std::string sense(char*) */ // this function will extract the fucking text
 	std::vector<int*> find(BITMAP*, Letter);
 
@@ -30,9 +34,44 @@ Sensor::Sensor(void)
 	return;
 }
 
+void Sensor::load(std::string src = "templates/std")
+{
+	typeface = src;
+	comparator.load_templates(src);
+}
+
+void Sensor::display()
+{
+	std::vector<Letter> templates = comparator.get_templates();
+	std::vector<Letter>::iterator it;
+
+	for (it = templates.begin(); it != templates.end(); ++it)
+	{
+		printf("---\n");
+		(*it).write();
+	}
+}
+
 std::vector<Letter> Sensor::get_templates()
 {
 	return comparator.get_templates();
+}
+
+Letter Sensor::get_letter(char to_find)
+{
+	Letter result;
+	std::vector<Letter> templates = comparator.get_templates();
+	std::vector<Letter>::iterator it;
+
+	for (it = templates.begin(); it != templates.end(); ++it)
+	{
+		if ((*it).get_id() == to_find) {
+			result = *it;
+			break;
+		}
+	}
+
+	return result;
 }
 
 /*

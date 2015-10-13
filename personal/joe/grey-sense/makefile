@@ -5,3 +5,4 @@ comparator: src/comparator.hpp src/comparator.cpp
 	g++ src/comparator.cpp -o comp $(options) $(addpath)
 sense: src/sensor.cpp src/sensor.hpp src/cropper.hpp
 	g++ src/sensor.cpp -o sense $(options) $(addpath)
+sensor: sense

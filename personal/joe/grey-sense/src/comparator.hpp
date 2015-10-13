@@ -6,12 +6,13 @@
 #include <cstdio>
 
 class Comparator {
-	void load_templates(bool);
 	unsigned int get_supremum(std::vector<float>);
+	std::string typeface;
 	std::vector<Letter> templates;
 public:
-	Letter greyscale2letter(GREYSCALE*);
 	Comparator(void);
+	void load_templates(std::string, bool);
+	Letter greyscale2letter(GREYSCALE*);
 	char identify(Letter, bool);
 	std::vector<Letter> get_templates(bool);
 };
@@ -41,22 +42,23 @@ unsigned int Comparator::get_supremum(std::vector<float> vec)
 	return out;
 }
 
-void Comparator::load_templates(bool debug_me = false)
+void Comparator::load_templates(std::string src = "templates/std", bool debug_me = false)
 {
 	char path[256];
 
+	typeface = src;
 	for (int i = 0; i < 10; ++i)
 	{
-		sprintf(path, "templates/%d.bmp", i);
+		sprintf(path, "%s/%d.bmp", src.c_str(), i);
 		templates.push_back(greyscale2letter(greyscale_load(path)));
 		templates[i].set_id('0' + i);
 		if (debug_me) templates[i].write();
 	}
 }
 
-Comparator::Comparator()
+Comparator::Comparator(void)
 {
-	load_templates();
+	return;
 }
 
 char Comparator::identify(Letter to_find, bool debug_me = false)
