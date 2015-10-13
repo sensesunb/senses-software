@@ -15,13 +15,12 @@ int main(int argc, char *argv[]) {
 	processing_font.load("templates/Processing");
 	bitmap = bitmap_load(argv[1]);
 
+	bitmap_display(bitmap);
 	for (char c = '0'; c <= '9'; c++)
 	{
-		input_found = input_font.find(bitmap, input_font.get_letter(c));
-		processing_found = processing_font.find(bitmap, processing_font.get_letter(c));
 		std::cout << c;
-		if (input_found.size() > 0) std::cout << "\tinput";
-		if (processing_found.size() > 0) std::cout << "\tprocessing";
+		if (input_font.find(bitmap, input_font.get_letter(c)).size() > 0) std::cout << " input";
+		if (processing_font.find(bitmap, processing_font.get_letter(c)).size() > 0) std::cout << " processing";
 		std::cout << std::endl;
 	}
 

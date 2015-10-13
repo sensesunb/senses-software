@@ -1,4 +1,2 @@
-run tests\input-text-pi.bmp
+run tests\arial-text-phi.bmp
 backtrace
-quit
-yes
