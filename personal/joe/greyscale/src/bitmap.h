@@ -87,6 +87,7 @@ BITMAP* bitmap_readtable(BITMAP *bitmap, FILE *stream)
 {
 	int height = bitmap->height;
 	int width = bitmap->width;
+	int width_extent = bitmap->image_size/height;
 	char junk;
 	int i, j;
 
@@ -95,8 +96,8 @@ BITMAP* bitmap_readtable(BITMAP *bitmap, FILE *stream)
 	{
 		bitmap->table[j] = (COLOR*) malloc(width * sizeof(COLOR));
 		for (i = 0; i < width; ++i)
-			bitmap->table[j][i] = (*color_read(stream));
-		for (i = 0; i < 3*width % 4; ++i)
+			bitmap->table[j][i] = *color_read(stream);
+		for (i = 0; i < width_extent - 3*width; ++i)
 			fread(&junk, sizeof(char), 1, stream);
 	}
 

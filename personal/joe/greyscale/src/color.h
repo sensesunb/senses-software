@@ -29,6 +29,17 @@ COLOR *color_read(FILE *stream)
 	return color;
 }
 
+COLOR *color_read_from_string(char *str, int offset)
+{
+	COLOR *color = color_new();
+
+	color->red = str[offset+0];
+	color->green = str[offset+1];
+	color->blue = str[offset+2];
+
+	return color;
+}
+
 bool color_is_white(COLOR *color)
 {
 	if (color->red > 220 && color->green > 220 && color->blue > 220)

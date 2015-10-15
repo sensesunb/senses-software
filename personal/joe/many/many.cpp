@@ -6,8 +6,8 @@
 int main(int argc, char *argv[]) {
 	Sensor input_font;
 	Sensor processing_font;
-	std::vector<int*> input_found;
-	std::vector<int*> processing_found;
+	// std::vector<int*> input_found;
+	// std::vector<int*> processing_found;
 	BITMAP *bitmap;
 
 	input_font.load("templates/Input");
