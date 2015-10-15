@@ -8,3 +8,5 @@ sense: grey-sense/src/sensor.cpp grey-sense/src/sensor.hpp cropper comparator
 sensor: sense
 many: sensor comparator cropper
 	g++ many/many.cpp -o many.exe $(options) $(addpath)
+identifier:
+	g++ many/identifier.cpp -o identify.exe $(options) $(addpath)
