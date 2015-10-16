@@ -7,7 +7,9 @@ void show_results(std::vector<float*> found)
 {
 	for (int i = 0; i < found.size(); ++i)
 	{
-		std::cout << "- " << (char) found[i][0] << std::endl;
+		std::cout << "- " << (char) found[i][0] << " @ ";
+		std::cout << (int) found[i][2] << "x" << (int) found[i][3];
+		std::cout << std::endl;
 	}
 }
 
@@ -23,13 +25,13 @@ int main(int argc, char *argv[]) {
 
 	std::cout << "--- # Input" << std::endl;
 	found = input_font.identify(bitmap);
-	if (found.length() > 0)
+	if (found.size() > 0)
 		show_results(found);
 	std::cout << std::endl;
 
 	std::cout << "--- # Processing" << std::endl;
 	found = processing_font.identify(bitmap);
-	if (found.length() > 0)
+	if (found.size() > 0)
 		show_results(found);
 
 	std::cout << "..." << std::endl;

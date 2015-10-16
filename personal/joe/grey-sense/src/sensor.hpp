@@ -166,8 +166,8 @@ std::vector<float*> Sensor::identify(BITMAP *image)
 	int by = 0;
 	int ex = image->width - 32;
 	int ey = image->height - 32;
-	int sx = 1;
-	int sy = 1;
+	int sx = 3;
+	int sy = 3;
 	int h = 32+1;
 
 	for (int y = by; y < ey; y += sy)
@@ -182,6 +182,7 @@ std::vector<float*> Sensor::identify(BITMAP *image)
 				found.push_back(result);
 			}
 			portion.clean();
+		}
 	}
 
 	return found;
