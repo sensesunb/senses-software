@@ -20,7 +20,7 @@ int main(int argc, char *argv[]) {
 	BITMAP *bitmap;
 
 	input_font.load("templates/Input");
-	processing_font.load("templates/Processing");
+	processing_font.load("templates/Helvetica");
 	bitmap = bitmap_load(argv[1]);
 
 	std::cout << "--- # Input" << std::endl;
@@ -28,8 +28,8 @@ int main(int argc, char *argv[]) {
 	if (found.size() > 0)
 		show_results(found);
 	std::cout << std::endl;
-
-	std::cout << "--- # Processing" << std::endl;
+	
+	std::cout << "--- # Helvetica" << std::endl;
 	found = processing_font.identify(bitmap);
 	if (found.size() > 0)
 		show_results(found);

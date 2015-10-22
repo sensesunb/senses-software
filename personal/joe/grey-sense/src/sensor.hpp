@@ -5,6 +5,7 @@
 #include <letter.hpp>
 #include <comparator.hpp>
 #include <cropper.hpp>
+#include <greyscale.h>
 #define SIMILARITY (0.9)
 
 class Sensor {
@@ -170,7 +171,15 @@ std::vector<float*> Sensor::identify(BITMAP *image)
 	int sy = 3;
 	int h = 32+1;
 
-	for (int y = by; y < ey; y += sy)
+	if (image->width == 32 && image->height == 32) {
+		portion = comparator.greyscale2letter(greyscale_from_bitmap(image));
+		result = (float*) malloc(sizeof(float)*5);
+		result[0] = comparator.identify(portion);
+		result[1] = -1;
+		result[2] = result[3] = 0;
+		found.push_back(result);
+	}
+	else for (int y = by; y < ey; y += sy)
 	{
 		for (int x = bx; x < ex; x += sx)
 		{

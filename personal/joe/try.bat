@@ -18,3 +18,5 @@ mingw32-make identifier
 identify tests/arial-8.bmp
 identify tests/input-text-pi.bmp
 identify tests/arial-text-phi.bmp
+
+del *.exe
