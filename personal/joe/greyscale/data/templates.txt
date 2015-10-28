@@ -1,0 +1,10 @@
+data/0.bmp
+data/1.bmp
+data/2.bmp
+data/3.bmp
+data/4.bmp
+data/5.bmp
+data/6.bmp
+data/7.bmp
+data/8.bmp
+data/9.bmp

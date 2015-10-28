@@ -2,7 +2,9 @@
 #define BITMAP_H
 #include <stdlib.h>
 #include <stdio.h>
+#include <stdbool.h>
 #include <algebra.h>
+#include "color.h"
 
 typedef struct {
 	char *name;
@@ -27,7 +29,7 @@ typedef struct {
 	int important_colors;
 
 	/* TABLE */
-	char **table;
+	COLOR **table;
 } BITMAP;
 
 BITMAP *bitmap_new(char *path)
@@ -83,15 +85,20 @@ BITMAP *bitmap_readdib(BITMAP *bitmap, FILE *stream)
 
 BITMAP* bitmap_readtable(BITMAP *bitmap, FILE *stream)
 {
-	int height = bitmap->height/4;
-	int width = bitmap->width/8;
-	int j;
+	int height = bitmap->height;
+	int width = bitmap->width;
+	int width_extent = bitmap->image_size/height;
+	char junk;
+	int i, j;
 
-	bitmap->table = (char**) malloc(height * sizeof(char));
-	for (j = 0; j < height; ++j)
+	bitmap->table = (COLOR**) malloc(height * sizeof(COLOR*));
+	for (j = height-1; j >= 0; --j)
 	{
-		bitmap->table[j] = (char*) malloc(width * sizeof(char));
-		fread(bitmap->table[j], sizeof(char), width, stream);
+		bitmap->table[j] = (COLOR*) malloc(width * sizeof(COLOR));
+		for (i = 0; i < width; ++i)
+			bitmap->table[j][i] = *color_read(stream);
+		for (i = 0; i < width_extent - 3*width; ++i)
+			fread(&junk, sizeof(char), 1, stream);
 	}
 
 	return bitmap;
@@ -130,24 +137,17 @@ void bitmap_write(BITMAP* bm)
 	printf("  number of important colors: %d\n", bm->important_colors);
 }
 
-#define SHIT -1
 void bitmap_display(BITMAP* bm)
 {
-	int height = bm->height/4;
-	int width = bm->width/8;
-	int i, j, k;
-	char pixel;
+	int height = bm->height;
+	int width = bm->width;
+	int i, j;
 
 	printf("---\n");
-	for (j = height - 1; j >= 0; --j)
+	for (j = 0; j < height; ++j)
 	{
 		for (i = 0; i < width; ++i)
-		{
-			pixel = bm->table[j][i];
-			for (k = 0; k < 8; ++k)
-				printf("%c", ((pixel >> k) & 0x1)? '#' : ' ');
-			printf(".");
-		}
+			printf("%c", (color_is_white(&bm->table[j][i]))? '#' : ' ');
 		printf("|\n");
 	}
 }
