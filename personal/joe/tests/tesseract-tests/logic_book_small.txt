@@ -1,0 +1,67 @@
+r
+
+S W 2 10 Resolution
+ec '
+
+0.
+2'1 Resolution
+
+WE. 31.4; hum, the gr:nerali2<‘.rl ‘version of Theorem 2,1fJ_20
+mp, gr~I1t:ml17,Nl results for PC in Theorem 2.9.24 (1). 93)
+
+3 Generalized Soundness and Com
+
+T
+
+111
+
+Pleteness for
+
+5 Paralleling
+
+'fhenrcm‘2.10.23 A nonempty set 8 of clauses is unsatisfiable iifthere
+is a derwvamn of the empty clause using Yesolutiqny
+
+Proof. Iimm compactness, Theorem 2.8.1 (17. 75), we know that S is
+not szuisﬁalule if? some ﬁnite subset S3 is not satisﬁable. But by the
+abow a ﬁnite 80 is unsatisﬁable iff one can derive the empty clause
+from Sm. Thus S is not satisﬁable ifl one can derive the empty clause
+
+from It.
+
+Exercises
+
+El
+
+2.10.1 Convert each of the following arguments into a set of clauses
+such that the argument is valid iﬁ the set of clauses is not satisﬁable.
+
+a. (R«—>S)a<»P
+(S/\Q)4—>((SHP)~>S)
+(PA(R4—>P))\/-(PVQ)
+ ’-((SHQ)<->3)
+
+c. R&—>(P‘\/Q)
+S<—>~(SaR)
+{.S'vR)«—>(P4—>S)
+.-.(PA(P<—»Q))—mP
+
+e. (S4-uQ)HR
+((R4—>P)/\Q)<—>P
+(R/\(Q<—>S))\/P
+((H/\Q)\/(S/\P))<—>R
+.‘,(S/\(R4-)P))/\P
+
+(QvP)a(S/\R)
+((P«>R)<—>Q)H-1P
+(QVR)H(QV(SHQ))
+ (P—»S)/\Q
+
+ﬁQVS
+
+«(S/\P)
+
+(FAQ)/\R
+(P—>R)aP
+.',ﬁ(SaP)
+
