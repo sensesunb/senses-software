@@ -1,0 +1,64 @@
+space
+a 1
+upnumber
+c 3
+,
+b 2
+i 9
+f 6
+null
+e 5
+literal
+d 4
+:
+h 8
+j 0
+g 7
+'
+k
+null
+m
+;
+l
+s
+p
+*
+o
+null
+n
+!
+r
+t
+q
+null
+null
+italic
+null
+null
+null
+null
+null
+letter
+null
+null
+null
+.
+null
+w
+null
+-
+u
+null
+x
+null
+v
+null
+null
+null
+z
+number
+y
+( )
+null
+null
+null
