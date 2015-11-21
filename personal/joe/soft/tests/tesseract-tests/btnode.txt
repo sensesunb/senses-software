@@ -1,0 +1,55 @@
+template <class keyType>
+class BTrs=Nude- publm Sinwlelndex <ke\fKyp:>
+// Bus ,5 the uvmamnry Versmn of the BTxeaI!ude .
+‘(
+Dunn:
+
+ETxeeNu<lal2m: Mxkeys, ml: unxque = nu
+~a':rewodelM
+
+H mm md mm. retuxn
+
+// a fax same
+
+// —x Eaz Mam
+
+1/ 1 m succegs
+
+m». mm: (cans: kempe nay. mt: mauso-
+m». mm (canal: keywpe key‘ mt recladdt
+mu: Search lcnnst kc}/D/pa Aey] zonsz,
+vuxd Punt Yostzennv ax tnnstr
+
+ml: Lnxgestxey <1, 7/ return: value at laxvesl key
+
+in: 5g11t[E'l‘reebIa<|e<kwYn1pe> - newNade).'//wave mtu newllode
+xnt e1ergeLE'A'raaIlod:<ke)rlype> - mmaem/mv. ftnn frunulode
+mt Updacekey (Kern/pa uldkey, keﬂype newkey, Ant mmxhn:
+mt. mu naauitexk buffer) constr
+
+int Unpack (mauiiarn buffer):
+
+mm Ln: lmtauffex Wxxar‘J‘)eLdEufier :. mm,
+
+in: maxkey: mt keysue - sxzeuflkmfnrpeﬂ.
+pxutecned:
+
+ml Ilexmudéz // addrlss nf next node at same level
+
+Ant Racaddx-, /r Addxess nf Ems nude m the Efree Die
+
+in mn.\<eys, // Ilnmmun number of keys m a node
+
+In: Haxﬁkeys, // maximum numkzer of keys m a nuée
+
+int m: n.
+
+vcxd C)eatL){Nu-Keys a. man: 4,»
+
+mm class B':z:e<kefl‘ype>,
+
+
+
+—n,
+
+1.
