@@ -1,5 +1,4 @@
-#include "bit2letter.h"
-#include "braille.h"
+#include "letter2braille.h"
 
 void setup()
 {

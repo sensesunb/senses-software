@@ -1,7 +1,7 @@
-#include "Arduino.h"
 #ifndef BRAILLE_H
 #define BRAILLE_H
 #include <stdlib.h>
+#include "bit2letter.h"
 #define braille byte
 #define one (0x1)
 
@@ -12,7 +12,7 @@ braille setdot(braille b, byte c, byte v)
 
 braille getdot(braille b, byte c)
 {
-	return b & (one >> c);
+	return b & (one << c);
 }
 
 byte* bitsof(braille c)
