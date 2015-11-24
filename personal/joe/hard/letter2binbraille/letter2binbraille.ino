@@ -1,4 +1,4 @@
-include "letter2braille.h"
+#include "letter2braille.h"
 
 void setup()
 {
@@ -14,7 +14,9 @@ char get_letter()
 		;
 	data = Serial.read();
 	while (Serial.available())
+	{
 		junk = Serial.read();
+	}
 
 	return data;
 }
