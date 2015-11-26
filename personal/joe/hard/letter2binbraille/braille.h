@@ -12,7 +12,7 @@ braille setdot(braille b, byte c, byte v)
 
 braille getdot(braille b, byte c)
 {
-	return b & (one << c);
+	return (b >> c) & one;
 }
 
 byte* bitsof(braille c)
@@ -21,7 +21,7 @@ byte* bitsof(braille c)
 	byte i = 0;
 
 	for (i = 0; i < 8; ++i)
-		a[i] = (c >> i) & 0x1;
+		a[i] = getdot(c, i);
 
 	return a;
 }

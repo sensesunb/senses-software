@@ -1,0 +1,193 @@
+	7	6	5	4	3	2	1	0	A	B	C	D	E	F	a	b	c	d	e	f			0
+!	0	0	1	0	0	0	0	1	x	x	x	x	x	x	0	1	1	0	1	0		A	Y = (!A!BC!DE!F!G!H)+(!AB!CDE!FGH)
+""""	0	0	1	0	0	0	1	0	x	x	x	x	x	x	0	1	1	0	0	1		B	 Y = (!A!BC!DE!F!G!H)+(!AB!CDE!FGH)+(ABCD!EF!GH)
+$	0	0	1	0	0	1	0	0	x	x	x	x	x	x	0	0	0	0	1	1		C	Y = (!A!BCD!EF!G)+(!A!BCD!EG)+(!A!BCD!F!G)+(!AB!CDE!FGH)+(ABCD!EF!GH)
+%	0	0	1	0	0	1	0	1	0	0	0	1	1	1	0	0	1	0	1	1		D	Y = (!A!BC!D!EF!GH)+(!A!BCD!E!FG)+(!A!BCD!EF!G!H)+(!A!BCD!F!G)+(!AB!C!D!E!FG!H)+(!AB!C!DE!F!G!H)+(!AB!C!DEF!GH)+(!AB!C!DF!H)+(!AB!C!DEGH)+(!AB!CD!E!F!G!H)+(!AB!C!E!FGH)+(!AB!C!EF!GH)+(!AB!CD!EFGH)+(!AB!C!F!GH)+(!AB!CE!FG!H)+(A!B!C!E!F!G!H)+(A!B!CDE!F!GH)+(!BCD!EFG!H)+(!BCD!EFH)+(B!C!D!EFGH)+(B!CD!EF!G!H)+(B!CD!EG!H)+(B!CDE!F!G!H)+(AB!CDEFG!H)+(ABC!D!E!F!G!H)+(ABC!DE!F!GH)+(ABC!D!FGH)+(ABC!EF!GH)
+&	0	0	1	0	0	1	1	0	x	x	x	x	x	x	1	1	1	1	0	1		E	Y = (!A!BCD!EF!G!H)+(!A!BC!EF!GH)+(!A!BCD!EG)+(!A!BCD!F!G)+(!AB!CDE!FGH)
+	0	0	1	0	0	1	1	1	x	x	x	x	x	x	0	0	1	0	0	0		F	Y = (!A!BC!D!EF!GH)+(!A!BCD!E!FG!H)+(!A!BCD!E!FH)+(!A!BCD!E!G!H)+(!A!BCE!F!G)+(!AB!C!D!E!FG!H)+(!AB!C!DE!F!G!H)+(!AB!C!DF!H)+(!AB!C!DEFGH)+(!AB!CD!E!F!G!H)+(!AB!CD!EFGH)+(!AB!CE!FG!H)+(!AB!C!FGH)+(!AB!C!GH)+(A!B!C!E!F!G!H)+(A!B!CDE!F!GH)+(A!BC!DEFG)+(!BCD!EFG!H)+(!BCD!EFH)+(B!C!D!EFGH)+(B!CD!EF!G!H)+(B!CD!EG!H)+(B!CDE!F!G!H)+(AB!CDEFG!H)+(ABC!D!E!F!G!H)+(ABC!D!EF!GH)+(ABC!DE!F!GH)+(ABC!D!FGH)
+(	0	0	1	0	1	0	0	0	1	1	0	0	0	1	0	0	1	0	0	0			
+)	0	0	1	0	1	0	0	1	0	0	0	0	0	1	0	0	1	1	1	0		a	Y = (!A!BCD!E!FGH)+(!A!BCD!EF!G!H)+(!AB!C!D!EG!H)+(!AB!C!DE!FGH)+(!AB!CD!E!F!GH)+(!AB!D!E!FH)+(!AC!D!EFG!H)+(!AB!DE!F!G!H)+(!AB!DF!G!H)+(!AB!DEF!GH)+(!AB!DEFG!H)+(!AB!DFGH)+(!ABD!E!F!G!H)+(!ACD!E!F!GH)+(!ACD!E!FG!H)+(!AB!EF!GH)+(!ABD!EFG!H)+(!ACDE!F!G!H)+(!ABDE!F!GH)+(!ABDE!FG!H)+(A!B!C!D!E!F!GH)+(A!B!C!D!E!FG!H)+(A!B!C!DE!F!G!H)+(A!B!C!DE!FGH)+(A!B!C!DF!GH)+(A!B!CD!E!F!G!H)+(A!B!C!EGH)+(A!B!CDE!F!GH)+(A!B!CDE!FG!H)+(A!B!D!E!F!G!H)+(!BCD!EFG!H)+(!BCD!EFH)+(B!CD!E!FG!H)+(B!CDE!F!G!H)+(AB!CDEFG!H)+(BC!D!E!FG!H)+(BC!DE!FGH)
+*	0	0	1	0	1	0	1	0	x	x	x	x	x	x	0	0	1	0	1	0		b	Y = (!A!BC!D!E!F!GH)+(!A!BCDE!F!H)+(!A!BCE!FGH)+(!A!BCDE!GH)+(!A!BCDEFGH)+(!AB!C!D!E!FG!H)+(!AB!C!DE!F!GH)+(!AB!C!DEF!G!H)+(!AB!CD!E!F!G!H)+(!AB!C!EFG!H)+(!AB!CDEF!GH)+(!AB!DE!F!H)+(!AC!DEF!G!H)+(!ACD!E!F!G!H)+(!ABD!E!FH)+(!ABCD!EF!G!H)+(!AC!EG!H)+(!AB!EFGH)+(A!B!C!D!E!F!GH)+(A!B!C!D!E!FG!H)+(A!B!C!D!EFGH)+(A!B!C!DE!F!G!H)+(A!B!C!DE!FGH)+(A!B!CD!E!F!G!H)+(A!B!C!EF!GH)+(A!B!CE!FG!H)+(A!B!CDEFG!H)+(A!B!D!E!F!G!H)+(A!BC!DEFG!H)+(!BC!DEFGH)+(!BCD!EFGH)+(B!CD!E!FG!H)+(B!CD!EF!G!H)+(AB!CDE!F!G!H)+(AC!D!E!FGH)+(ABC!D!EF!G)+(BC!DE!F!GH)+(ACD!EF!GH)
++	0	0	1	0	1	0	1	1	x	x	x	x	x	x	0	1	1	0	1	0		c	Y = (!AB!DEF!GH)+(!AB!DEF!H)+(!AB!DEGH)+(!ABD!E!FGH)+(!ABD!EF!GH)+(!ABD!EF!H)+(!ABD!F!GH)+(!ABD!F!H)+(A!B!C!D!E!F!G!H)+(A!B!C!D!EFGH)
+,	0	0	1	0	1	1	0	0	x	x	x	x	x	x	0	1	0	0	0	0		d	Y = (!AB!DE!FG!H)+(!AB!DEF!GH)+(!AB!DFG!H)+(!ABD!E!F!GH)+(!AB!EF!G!H)+(!AB!EGH)+(!ABD!F!G!H)+(!ABE!F!GH)+(A!B!C!D!E!F!G!H)+(A!B!C!D!EFGH)
+-	0	0	1	0	1	1	0	1	x	x	x	x	x	x	0	0	1	0	0	1		e	Y = (!AB!D!EF!GH)+(!AB!DE!F!G!H)+(!AB!DEFG)+(!ABD!E!FG!H)+(!AB!EF!G!H)+(!AB!EFGH)+(!ABD!F!GH)+(!ABE!FG!H)
+.	0	0	1	0	1	1	1	0	x	x	x	x	x	x	0	0	1	0	0	0		f	Y = (!A!BC!D!EF!GH)+(!A!BC!D!EF!H)+(!A!BCEF!GH)+(!A!BCDEFGH)+(!AB!CDF!GH)+(!ABD!EFG)+(!ABDE!F!GH)+(!ABDE!FG!H)+(!ABCDE!G!H)+(A!B!C!D!E!F!GH)+(A!B!C!D!E!FG!H)+(A!B!C!D!EFGH)+(A!B!C!DE!F!G!H)+(A!B!C!DE!FGH)+(A!B!C!DF!GH)+(A!B!C!E!F!G!H)+(A!B!C!E!FGH)+(A!B!CE!FG!H)+(!BC!D!E!FG!H)+(A!BC!DEFG)+(A!BCD!EFG!H)+(A!BD!EFH)+(AB!CD!E!FG!H)+(AB!CD!EF!G!H)+(B!CDE!F!G!H)+(A!CDEFG!H)+(AC!D!E!F!G!H)+(ABC!D!E!FG!H)+(AC!D!E!FGH)+(ABC!D!EF!G)+(ABC!DE!FH)+(BCD!EF!GH)
+/	0	0	1	0	1	1	1	1	0	0	0	0	0	1	0	1	0	0	0	0			
+0	0	0	1	1	0	0	0	0	0	0	1	1	1	1	0	1	0	1	1	0			
+1	0	0	1	1	0	0	0	1	0	0	1	1	1	1	1	0	0	0	0	0			
+2	0	0	1	1	0	0	1	0	0	0	1	1	1	1	1	1	0	0	0	0			
+3	0	0	1	1	0	0	1	1	0	0	1	1	1	1	1	0	0	1	0	0			
+4	0	0	1	1	0	1	0	0	0	0	1	1	1	1	1	0	0	1	1	0			
+5	0	0	1	1	0	1	0	1	0	0	1	1	1	1	1	0	0	0	1	0			
+6	0	0	1	1	0	1	1	0	0	0	1	1	1	1	1	1	0	1	1	0			
+7	0	0	1	1	0	1	1	1	0	0	1	1	1	1	1	1	0	1	0	0			
+8	0	0	1	1	1	0	0	0	0	0	1	1	1	1	1	1	0	0	1	0			
+9	0	0	1	1	1	0	0	1	0	0	1	1	1	1	0	1	0	1	0	0			
+:	0	0	1	1	1	0	1	0	x	x	x	x	x	x	0	1	0	0	1	0			
+;	0	0	1	1	1	0	1	1	x	x	x	x	x	x	0	1	1	0	0	0			
+=	0	0	1	1	1	1	0	1	x	x	x	x	x	x	0	1	1	0	1	1			
+?	0	0	1	1	1	1	1	1	x	x	x	x	x	x	0	1	0	0	0	1			
+@	0	1	0	0	0	0	0	0	x	x	x	x	x	x	0	0	1	1	1	0			
+A	0	1	0	0	0	0	0	1	0	0	0	1	0	1	1	0	0	0	0	0			
+B	0	1	0	0	0	0	1	0	0	0	0	1	0	1	1	1	0	0	0	0			
+C	0	1	0	0	0	0	1	1	0	0	0	1	0	1	1	0	0	1	0	0			
+D	0	1	0	0	0	1	0	0	0	0	0	1	0	1	1	0	0	1	1	0			
+E	0	1	0	0	0	1	0	1	0	0	0	1	0	1	1	0	0	0	1	0			
+F	0	1	0	0	0	1	1	0	0	0	0	1	0	1	1	1	0	1	0	0			
+G	0	1	0	0	0	1	1	1	0	0	0	1	0	1	1	1	0	1	1	0			
+H	0	1	0	0	1	0	0	0	0	0	0	1	0	1	1	1	0	0	1	0			
+I	0	1	0	0	1	0	0	1	0	0	0	1	0	1	0	1	0	1	0	0			
+J	0	1	0	0	1	0	1	0	0	0	0	1	0	1	0	1	0	1	1	0			
+K	0	1	0	0	1	0	1	1	0	0	0	1	0	1	1	0	1	0	0	0			
+L	0	1	0	0	1	1	0	0	0	0	0	1	0	1	1	1	1	0	0	0			
+M	0	1	0	0	1	1	0	1	0	0	0	1	0	1	1	0	1	1	0	0			
+N	0	1	0	0	1	1	1	0	0	0	0	1	0	1	1	0	1	1	1	0			
+O	0	1	0	0	1	1	1	1	0	0	0	1	0	1	1	0	1	0	1	0			
+P	0	1	0	1	0	0	0	0	0	0	0	1	0	1	1	1	1	1	0	0			
+Q	0	1	0	1	0	0	0	1	0	0	0	1	0	1	1	1	1	1	1	0			
+R	0	1	0	1	0	0	1	0	0	0	0	1	0	1	1	1	1	0	1	0			
+S	0	1	0	1	0	0	1	1	0	0	0	1	0	1	0	1	1	1	0	0			
+T	0	1	0	1	0	1	0	0	0	0	0	1	0	1	0	1	1	1	1	0			
+U	0	1	0	1	0	1	0	1	0	0	0	1	0	1	1	0	1	0	0	1			
+V	0	1	0	1	0	1	1	0	0	0	0	1	0	1	1	1	1	0	0	1			
+W	0	1	0	1	0	1	1	1	0	0	0	1	0	1	0	1	0	1	1	1			
+X	0	1	0	1	1	0	0	0	0	0	0	1	0	1	1	0	1	1	0	1			
+Y	0	1	0	1	1	0	0	1	0	0	0	1	0	1	1	0	1	1	1	1			
+Z	0	1	0	1	1	0	1	0	0	0	0	1	0	1	1	0	1	0	1	1			
+[	0	1	0	1	1	0	1	1	1	1	1	0	1	1	0	0	1	0	0	0			
+]	0	1	0	1	1	1	0	1	0	0	0	0	0	1	0	1	1	1	1	1			
+a	0	1	1	0	0	0	0	1	X	X	X	X	X	X	1	0	0	0	0	0			
+b	0	1	1	0	0	0	1	0	X	X	X	X	X	X	1	1	0	0	0	0			
+c	0	1	1	0	0	0	1	1	X	X	X	X	X	X	1	0	0	1	0	0			
+d	0	1	1	0	0	1	0	0	X	X	X	X	X	X	1	0	0	1	1	0			
+e	0	1	1	0	0	1	0	1	X	X	X	X	X	X	1	0	0	0	1	0			
+f	0	1	1	0	0	1	1	0	X	X	X	X	X	X	1	1	0	1	0	0			
+g	0	1	1	0	0	1	1	1	X	X	X	X	X	X	1	1	0	1	1	0			
+h	0	1	1	0	1	0	0	0	X	X	X	X	X	X	1	1	0	0	1	0			
+i	0	1	1	0	1	0	0	1	X	X	X	X	X	X	0	1	0	1	0	0			
+j	0	1	1	0	1	0	1	0	X	X	X	X	X	X	0	1	0	1	1	0			
+k	0	1	1	0	1	0	1	1	X	X	X	X	X	X	1	0	1	0	0	0			
+l	0	1	1	0	1	1	0	0	X	X	X	X	X	X	1	1	1	0	0	0			
+m	0	1	1	0	1	1	0	1	X	X	X	X	X	X	1	0	1	1	0	0			
+n	0	1	1	0	1	1	1	0	X	X	X	X	X	X	1	0	1	1	1	0			
+o	0	1	1	0	1	1	1	1	X	X	X	X	X	X	1	0	1	0	1	0			
+p	0	1	1	1	0	0	0	0	X	X	X	X	X	X	1	1	1	1	0	0			
+q	0	1	1	1	0	0	0	1	X	X	X	X	X	X	1	1	1	1	1	0			
+r	0	1	1	1	0	0	1	0	X	X	X	X	X	X	1	1	1	0	1	0			
+s	0	1	1	1	0	0	1	1	X	X	X	X	X	X	0	1	1	1	0	0			
+t	0	1	1	1	0	1	0	0	X	X	X	X	X	X	0	1	1	1	1	0			
+u	0	1	1	1	0	1	0	1	X	X	X	X	X	X	1	0	1	0	0	1			
+v	0	1	1	1	0	1	1	0	X	X	X	X	X	X	1	1	1	0	0	1			
+w	0	1	1	1	0	1	1	1	X	X	X	X	X	X	0	1	0	1	1	1			
+x	0	1	1	1	1	0	0	0	X	X	X	X	X	X	1	0	1	1	0	1			
+y	0	1	1	1	1	0	0	1	X	X	X	X	X	X	1	0	1	1	1	1			
+z	0	1	1	1	1	0	1	0	X	X	X	X	X	X	1	0	1	0	1	1			
+|	0	1	1	1	1	1	0	0	X	X	X	X	X	X	0	0	0	1	1	1			
+Ç	1	0	0	0	0	0	0	0	0	0	0	1	0	1	1	1	1	1	0	1			
+ü	1	0	0	0	0	0	0	1	X	X	X	X	X	X	1	1	0	0	1	1			
+é	1	0	0	0	0	0	1	0	X	X	X	X	X	X	1	1	1	1	1	1			
+â	1	0	0	0	0	0	1	1	X	X	X	X	X	X	1	0	0	0	0	1			
+à	1	0	0	0	0	1	0	1	X	X	X	X	X	X	1	1	0	1	0	1			
+ç	1	0	0	0	0	1	1	1	X	X	X	X	X	X	1	1	1	1	0	1			
+ê	1	0	0	0	1	0	0	0	X	X	X	X	X	X	1	1	0	0	0	1			
+è	1	0	0	0	1	0	1	0	X	X	X	X	X	X	0	1	1	1	0	1			
+ï	1	0	0	0	1	0	1	1	X	X	X	X	X	X	1	1	0	1	1	1			
+ì	1	0	0	0	1	1	0	1	X	X	X	X	X	X	1	0	0	1	0	1			
+É	1	0	0	1	0	0	0	0	0	0	0	1	0	1	1	1	1	1	1	1			
+ô	1	0	0	1	0	0	1	1	X	X	X	X	X	X	1	0	0	1	1	1			
+ò	1	0	0	1	0	1	0	1	X	X	X	X	X	X	0	1	0	1	1	1			
+ù	1	0	0	1	0	1	1	1	X	X	X	X	X	X	1	0	0	0	1	1			
+															0	0	0	0	0	0			
+															0	0	0	0	0	0			
+Ü	1	0	0	1	1	0	1	0	0	0	0	1	0	1	1	1	0	0	1	1			
+															0	0	0	0	0	0			
+															0	0	0	0	0	0			
+															0	0	0	0	0	0			
+x	1	0	0	1	1	1	1	0	X	X	X	X	X	X	0	1	1	0	0	1			
+															0	0	0	0	0	0			
+á	1	0	1	0	0	0	0	0	X	X	X	X	X	X	1	1	1	0	1	1			
+															0	0	0	0	0	0			
+ó	1	0	1	0	0	0	1	0	X	X	X	X	X	X	0	0	1	1	0	1			
+ú	1	0	1	0	0	0	1	1	X	X	X	X	X	X	0	1	1	1	1	1			
+															0	0	0	0	0	0			
+															0	0	0	0	0	0			
+															0	0	0	0	0	0			
+															0	0	0	0	0	0			
+															0	0	0	0	0	0			
+															0	0	0	0	0	0			
+															0	0	0	0	0	0			
+															0	0	0	0	0	0			
+															0	0	0	0	0	0			
+															0	0	0	0	0	0			
+<<	1	0	1	0	1	1	1	0	0	0	0	0	0	1	0	1	1	0	0	1			
+>>	1	0	1	0	1	1	1	1	0	0	0	0	0	1	0	1	1	0	0	1			
+															0	0	0	0	0	0			
+															0	0	0	0	0	0			
+															0	0	0	0	0	0			
+															0	0	0	0	0	0			
+															0	0	0	0	0	0			
+Á	1	0	1	1	0	1	0	1	0	0	0	1	0	1	1	1	1	0	1	1			
+Â	1	0	1	1	0	1	1	0	0	0	0	1	0	1	1	0	0	0	0	1			
+À	1	0	1	1	0	1	1	1	0	0	0	1	0	1	1	1	0	1	0	1			
+															0	0	0	0	0	0			
+															0	0	0	0	0	0			
+															0	0	0	0	0	0			
+															0	0	0	0	0	0			
+															0	0	0	0	0	0			
+															0	0	0	0	0	0			
+															0	0	0	0	0	0			
+															0	0	0	0	0	0			
+															0	0	0	0	0	0			
+															0	0	0	0	0	0			
+															0	0	0	0	0	0			
+															0	0	0	0	0	0			
+															0	0	0	0	0	0			
+															0	0	0	0	0	0			
+ã	1	1	0	0	0	1	1	0	X	X	X	X	X	X	0	0	1	1	1	0			
+Ã	1	1	0	0	0	1	1	1	0	0	0	1	0	1	0	0	1	1	1	0			
+															0	0	0	0	0	0			
+															0	0	0	0	0	0			
+															0	0	0	0	0	0			
+															0	0	0	0	0	0			
+															0	0	0	0	0	0			
+															0	0	0	0	0	0			
+															0	0	0	0	0	0			
+															0	0	0	0	0	0			
+															0	0	0	0	0	0			
+															0	0	0	0	0	0			
+Ê	1	1	0	1	0	0	1	0	0	0	0	1	0	1	1	1	0	0	0	1			
+															0	0	0	0	0	0			
+È	1	1	0	1	0	1	0	0	0	0	0	1	0	1	0	1	1	1	0	1			
+															0	0	0	0	0	0			
+Í	1	1	0	1	0	1	1	0	0	0	0	1	0	1	0	0	1	1	0	0			
+															0	0	0	0	0	0			
+Ï	1	1	0	1	1	0	0	0	0	0	0	1	0	1	1	1	0	1	1	1			
+															0	0	0	0	0	0			
+															0	0	0	0	0	0			
+															0	0	0	0	0	0			
+															0	0	0	0	0	0			
+															0	0	0	0	0	0			
+Ì	1	1	0	1	1	1	1	0	0	0	0	1	0	1	1	0	0	1	0	1			
+															0	0	0	0	0	0			
+Ó	1	1	1	0	0	0	0	0	0	0	0	1	0	1	0	0	1	1	0	1			
+															0	0	0	0	0	0			
+Ô	1	1	1	0	0	0	1	0	X	X	X	X	X	X	1	0	0	1	1	1			
+Ò	1	1	1	0	0	0	1	1	0	0	0	1	0	1	0	1	0	1	1	1			
+õ	1	1	1	0	0	1	0	0	X	X	X	X	X	X	0	1	0	1	0	1			
+Õ	1	1	1	0	0	1	0	1	0	0	0	1	0	1	0	1	0	1	0	1			
+															0	0	0	0	0	0			
+															0	0	0	0	0	0			
+															0	0	0	0	0	0			
+Ú	1	1	1	0	1	0	0	1	0	0	0	1	0	1	0	1	1	1	1	1			
+															0	0	0	0	0	0			
+Ù	1	1	1	0	1	0	1	1	0	0	0	1	0	1	1	0	0	0	1	1			
+															0	0	0	0	0	0			
+															0	0	0	0	0	0			
+															0	0	0	0	0	0			
+															0	0	0	0	0	0			
+															0	0	0	0	0	0			
+															0	0	0	0	0	0			
+															0	0	0	0	0	0			
+															0	0	0	0	0	0			
+															0	0	0	0	0	0			
+§	1	1	1	1	0	1	0	1	0	1	1	1	0	0	0	1	1	1	0	0			

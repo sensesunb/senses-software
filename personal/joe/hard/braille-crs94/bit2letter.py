@@ -1,11 +1,40 @@
+#!c:\python27\python.exe
+def extract(line):
+	cells = line.split('\t')
+	letter = cells[0]
+	code = 0
+
+
+
+	return letter, code
+
+def mine(fp):
+	table = dict()
+
+	for i, line in enumerate(inlet):
+		if i == 0:
+			continue
+		elif i == 84: # because thats 42*2
+			break
+		else:
+			letter, code = extract(line)
+			table[letter] = code
+
+	return table
+
 def get_header():
 	return """#pragma once
+#include <stdlib.h>
 #ifndef byte
 #define byte unsigned char
 #endif
 
+/* DECIDE IF LETTER HAS A PRECEDING BRAILLE */
+
 byte letter2code(char letter)
 {
+  byte *code = (byte*) malloc(2*sizeof(byte));
+
   switch (letter)
   {
 """
@@ -29,26 +58,24 @@ def format(linenumber, content):
 
 def close_header():
 	return """
-    default: return '?';
+    default:
+	  free(code);
+	  code = NULL;
   }
-}"""
+
+  return code;
+}
+"""
 
 def main(inlet, outlet):
-	i = 0
 	outlet.write(get_header())
-	for i, line in enumerate(inlet):
-		it = format(i, line)
-		if len(it.rstrip()) > 0:
-			outlet.write(it)
-		i += 1
+	for letter, braille in mine(inlet):
+		outlet.write(format(braille, letter))
 	outlet.write(close_header())
 
 if __name__ == '__main__':
-	b2l = 'bit2letter'
-	inlet = open(b2l + '.txt', 'r')
-	outlet = open(b2l + '.h', 'w')
-
+	inlet = open('braille.csv', 'r')
+	outlet = open('bit2letter.h', 'w')
 	main(inlet, outlet)
-
 	inlet.close()
 	outlet.close()
