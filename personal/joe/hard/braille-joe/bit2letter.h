@@ -42,7 +42,7 @@ byte letter2code(char letter)
     case 'z': return 57; break;
     case 'y': return 59; break;
     case '(': case ')': return 60; break;
-
+    
     default: return '?';
   }
 }
