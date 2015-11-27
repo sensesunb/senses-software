@@ -2,7 +2,7 @@
 
 void setup()
 {
-	Serial.begin(57600);
+	Serial.begin(9600);
 }
 
 char get_letter()
@@ -23,9 +23,6 @@ char get_letter()
 
 void write_braille(byte b)
 {
-	Serial.print("byte ");
-	Serial.print(b);
-	Serial.print(": ");
 	for (byte c = 0; c < 6; c++)
 		Serial.print((getdot(b, c))? '*' : '.');
 	Serial.println();
