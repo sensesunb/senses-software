@@ -16,6 +16,10 @@ matriz(1) = sou_um_numero
 matriz(2,2) = sou_imaginario
 length(matriz)
 size(matriz)
+id = eye(3)
+uns = ones(3, 3)
+id * uns
+id .* uns
 texto = 'somente com aspas simples!'
 ola = 'hello'
 nome = 'joe frank'
@@ -24,6 +28,18 @@ disp(saudacao)
 fprintf('fprintf: %s %s\n', ola, nome)
 saudacao = sprintf('%s %s\n', ola, nome)
 disp(saudacao)
+x = -pi:0.1:pi
+x = -pi:0.1:pi;
+y = sin(x);
+z = cos(x .^ 2);
+figure;
+plot(x, y);
+figure;
+plot(x, z);
+figure;
+plot(x, y, 'b', ...
+     x, z, 'r-');
+
 % Controle de fluxo
 disp('# CONTROLE DE FLUXO');
 if funcao_e
@@ -63,6 +79,7 @@ otherwise
     disp('i dont get you')
 end
 
+% Arquivos
 disp('# ARQUIVOS');
 % Células
 celula = { };
@@ -92,3 +109,7 @@ arquivo = 'intro.md';
 novo_arquivo = trocar_extensao(arquivo, 'txt');
 fprintf('%s agora eh %s #sqn\n', arquivo, ...
                                  novo_arquivo);
+
+% O que realmente importa
+life
+why

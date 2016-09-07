@@ -1,12 +1,14 @@
 Introdução ao MATLAB
 ====================
 
-MATLAB é uma linguagem de programação interpretada, fraca e dinamicamente tipada, estruturada e voltada para cálculo numérico. Os scripts de MATLAB rodam em Java, e são responsáveis não somente pela parte matemática, mas também pelo GUIDE e pelo Simulink.
+MATLAB é uma linguagem de programação interpretada, fraca e dinamicamente tipada, multi-paradigma (imperativa, estruturada, orientada a objetos e funcional, tudo ao mesmo tempo) e voltada para cálculo numérico. Os scripts de MATLAB rodam em Java, e são responsáveis não somente pela parte matemática, mas também pelo GUIDE e pelo Simulink.
 
 Tipos básicos
 -------------
 
 ``` matlab
+% Eu sou um comentario!
+% # Tipos basicos
 eu_sou_verdadeiro = true
 eu_sou_falso = false
 funcao_e = and(eu_sou_verdadeiro, eu_sou_falso)
@@ -31,6 +33,17 @@ disp(saudacao)
 fprintf('fprintf: %s %s\n', ola, nome)
 saudacao = sprintf('%s %s\n', ola, nome)
 disp(saudacao)
+x = -pi:0.1:pi
+x = -pi:0.1:pi;
+y = sin(x);
+z = cos(x .^ 2);
+figure;
+plot(x, y);
+figure;
+plot(x, z);
+figure;
+plot(x, y, 'b', ...
+     x, z, 'r-');
 ```
 
 Controle de fluxo
